@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  asciiflow:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: jerpena/asciiflow
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    ports:
+      - "${ASCIIFLOW_WEBPORT}:80"
